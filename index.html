@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#090b10">
+    <meta name="description"
+          content="Digital Afterlife — An AI-powered tool for resurrecting abandoned software projects.">
+
+    <title>Digital Afterlife | Resurrect Your Code</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+    <div class="noise"></div>
+
+    <header class="navbar">
+
+        <a href="#" class="brand">
+            <span class="brand-icon">✳</span>
+            <span>DIGITAL<span class="brand-muted">AFTERLIFE</span></span>
+        </a>
+
+        <div class="nav-right">
+            <span class="system-status">
+                <span class="status-dot"></span>
+                <span id="systemStatus">SYSTEM ONLINE</span>
+            </span>
+
+            <button class="icon-button" id="themeButton"
+                    aria-label="Toggle interface glow">
+                ◐
+            </button>
+        </div>
+
+    </header>
+
+    <main class="container">
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div class="hero-copy">
+
+                <div class="eyebrow">
+                    <span class="eyebrow-line"></span>
+                    OPEN-SOURCE AI PROJECT RECOVERY
+                </div>
+
+                <h1>
+                    Some code<br>
+                    deserves a <span class="gradient-text">second life.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Forgotten repositories. Unfinished dreams.
+                    Let your AI investigator uncover what was left behind
+                    and help you bring your project back to life.
+                </p>
+
+                <div class="hero-actions">
+
+                    <button class="primary-button" id="uploadButton">
+                        <span>✦</span>
+                        Investigate a project
+                        <span class="button-arrow">↗</span>
+                    </button>
+
+                    <button class="secondary-button" id="demoButton">
+                        Explore demo <span>→</span>
+                    </button>
+
+                </div>
+
+                <p class="privacy-note">
+                    <span>◉</span>
+                    LOCAL-FIRST DESIGN · OPEN-MODEL READY
+                </p>
+
+            </div>
+
+            <div class="ghost-visual">
+
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
+
+                <div class="ghost-glow"></div>
+
+                <div class="ghost">
+                    <div class="ghost-body">
+                        <div class="ghost-face">
+                            <span class="ghost-eye"></span>
+                            <span class="ghost-eye"></span>
+                            <span class="ghost-mouth"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="floating-code code-one">
+                    <span>01</span> git log
+                </div>
+
+                <div class="floating-code code-two">
+                    <span>02</span> TODO: finish me
+                </div>
+
+                <div class="floating-code code-three">
+                    <span>03</span> return to life();
+                </div>
+
+                <div class="ghost-caption">
+                    <span class="status-dot"></span>
+                    YOUR REPOSITORY IS CALLING
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- DASHBOARD -->
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <div class="eyebrow">THE INVESTIGATION ROOM</div>
+                    <h2>Repository <span>resurrection</span></h2>
+                </div>
+
+                <div class="demo-badge" id="modeBadge">
+                    DEMO MODE
+                </div>
+
+            </div>
+
+            <!-- SELECT PROJECT -->
+
+            <section class="project-panel panel">
+
+                <div class="panel-top">
+
+                    <div class="panel-title">
+                        <div class="panel-icon">⌘</div>
+                        <div>
+                            <h3>Choose your forgotten project</h3>
+                            <p>Start with a local project folder.</p>
+                        </div>
+                    </div>
+
+                    <div class="file-label">LOCAL FILES</div>
+
+                </div>
+
+                <label class="drop-zone" id="dropZone">
+
+                    <input type="file"
+                           id="folderInput"
+                           webkitdirectory
+                           directory
+                           multiple
+                           hidden>
+
+                    <div class="upload-icon">↥</div>
+
+                    <div class="drop-title">
+                        Drop a project folder here
+                    </div>
+
+                    <div class="drop-description">
+                        Or <span>browse your files</span> to begin
+                    </div>
+
+                    <div class="file-support">
+                        HTML · CSS · JS · PY · C · CPP · JAVA
+                    </div>
+
+                </label>
+
+                <div class="selected-project hidden" id="selectedProject">
+
+                    <div class="project-file-icon">⌘</div>
+
+                    <div class="selected-project-info">
+                        <strong id="projectName">project-name</strong>
+                        <span id="projectDetails">0 files selected</span>
+                    </div>
+
+                    <button class="text-button" id="clearProject">
+                        Remove
+                    </button>
+
+                </div>
+
+                <div class="project-actions">
+
+                    <div class="privacy-note">
+                        <span>◉</span>
+                        Files are analyzed in your browser in this demo.
+                    </div>
+
+                    <button class="primary-button analyze-button"
+                            id="analyzeButton" disabled>
+                        Analyze repository <span>→</span>
+                    </button>
+
+                </div>
+
+            </section>
+
+            <!-- PROGRESS -->
+
+            <section class="progress-panel panel hidden" id="progressPanel">
+
+                <div class="progress-heading">
+                    <div>
+                        <div class="eyebrow">INVESTIGATION IN PROGRESS</div>
+                        <h3 id="progressTitle">Examining the remains...</h3>
+                    </div>
+
+                    <span id="progressPercent">0%</span>
+                </div>
+
+                <div class="progress-track">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+
+                <div class="progress-log" id="progressLog">
+                    <p>Waiting for investigation...</p>
+                </div>
+
+            </section>
+
+            <!-- RESULTS -->
+
+            <section class="results hidden" id="resultsSection">
+
+                <div class="results-heading">
+                    <div>
+                        <div class="eyebrow">INVESTIGATION COMPLETE</div>
+                        <h2>The truth has <span>surfaced.</span></h2>
+                    </div>
+
+                    <button class="secondary-button"
+                            id="newInvestigationButton">
+                        + New investigation
+                    </button>
+                </div>
+
+                <!-- METRICS -->
+
+                <div class="metrics-grid">
+
+                    <article class="metric-card panel">
+
+                        <div class="metric-label">
+                            PROJECT HEALTH
+                            <span>◉</span>
+                        </div>
+
+                        <div class="health-display">
+
+                            <div class="health-ring" id="healthRing">
+                                <div class="health-inner">
+                                    <strong id="healthScore">--</strong>
+                                    <span>/ 100</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="metric-status" id="healthStatus">
+                                    Awaiting results
+                                </div>
+
+                                <p class="metric-description"
+                                   id="healthDescription">
+                                    Your project's condition will appear here.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                    <article class="metric-card panel">
+
+                        <div class="metric-label">
+                            FILES EXAMINED
+                            <span>⌘</span>
+                        </div>
+
+                        <div class="metric-number" id="filesCount">0</div>
+
+                        <p class="metric-description">
+                            Source files inspected
+                        </p>
+
+                        <div class="metric-bottom">
+                            <span class="mini-indicator"></span>
+                            Browser-based inspection
+                        </div>
+
+                    </article>
+
+                    <article class="metric-card panel">
+
+                        <div class="metric-label">
+                            UNFINISHED BUSINESS
+                            <span>⚑</span>
+                        </div>
+
+                        <div class="metric-number" id="todoCount">0</div>
+
+                        <p class="metric-description">
+                            TODOs and FIXMEs discovered
+                        </p>
+
+                        <div class="metric-bottom">
+                            <span class="mini-indicator warning"></span>
+                            Review before fixing
+                        </div>
+
+                    </article>
+
+                </div>
+
+                <!-- FINDINGS -->
+
+                <div class="findings-grid">
+
+                    <article class="panel findings-panel">
+
+                        <div class="panel-top">
+
+                            <div class="panel-title">
+                                <div class="panel-icon">⌕</div>
+                                <div>
+                                    <h3>Unfinished business</h3>
+                                    <p>Potentially incomplete work found in the code.</p>
+                                </div>
+                            </div>
+
+                            <span class="count-badge" id="findingBadge">0</span>
+
+                        </div>
+
+                        <div class="findings-list" id="findingsList">
+                            <div class="empty-state">
+                                Your investigation results will appear here.
+                            </div>
+                        </div>
+
+                    </article>
+
+                    <!-- GHOST MESSAGE -->
+
+                    <article class="panel ghost-message-panel">
+
+                        <div class="ghost-message-header">
+                            <div class="mini-ghost">✳</div>
+
+                            <div>
+                                <h3>A message from the ghost</h3>
+                                <p>YOUR PROJECT HAS SOMETHING TO SAY</p>
+                            </div>
+                        </div>
+
+                        <div class="ghost-quote" id="ghostQuote">
+                            "Every abandoned project has a story.
+                            Let's discover yours."
+                        </div>
+
+                        <div class="ghost-message-footer">
+                            <span class="status-dot"></span>
+                            <span id="ghostPersona">THE OBSERVER</span>
+                        </div>
+
+                    </article>
+
+                </div>
+
+                <!-- RECOMMENDATIONS -->
+
+                <article class="panel recommendations-panel">
+
+                    <div class="panel-top">
+
+                        <div class="panel-title">
+                            <div class="panel-icon">✦</div>
+                            <div>
+                                <h3>Resurrection plan</h3>
+                                <p>Suggested next steps based on detectable evidence.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="recommendations-list" id="recommendationsList">
+                        <p class="empty-state">
+                            Recommendations will appear after analysis.
+                        </p>
+                    </div>
+
+                </article>
+
+                <div class="report-footer">
+                    <span>✳ DIGITAL AFTERLIFE</span>
+                    <span>INSPECT EVIDENCE. REVIVE IDEAS.</span>
+                </div>
+
+            </section>
+
+        </section>
+
+        <!-- FOOTER -->
+
+        <footer class="footer">
+            <div>Built for the <span>Ghost in the Machine</span> challenge.</div>
+            <div>OPEN INNOVATION · HUMAN CURIOSITY</div>
+        </footer>
+
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
